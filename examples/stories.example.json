@@ -1,0 +1,39 @@
+{
+  "lastUpdated": "2026-03-23",
+  "stories": [
+    {
+      "id": "story-001",
+      "title": "Built anomaly detection system that saved $500K",
+      "situation": "Our procurement team was manually reviewing thousands of invoices monthly, missing pricing anomalies that were costing the company significant money.",
+      "task": "I was asked to find a way to automatically detect anomalous pricing in our vendor invoices to prevent overpayment.",
+      "action": "I built an XGBoost-based anomaly detection model using historical invoice data. Engineered features from vendor patterns, seasonal pricing, and contract terms. Used SHAP values to make the model explainable for the procurement team.",
+      "result": "The system identified $500K in overpayments in its first quarter. Reduced manual review time by 70%. The model is now running in production with 92% precision.",
+      "skills": ["XGBoost", "Feature Engineering", "SHAP", "Python", "Production ML"],
+      "themes": ["impact", "automation", "cost-savings", "cross-functional"],
+      "applicableQuestions": [
+        "Tell me about a time you used data to drive business impact",
+        "Describe a project where you built something from scratch",
+        "How do you make ML models explainable to non-technical stakeholders?"
+      ]
+    },
+    {
+      "id": "story-002",
+      "title": "Dashboard that served 200+ users and reduced ad-hoc requests 35%",
+      "situation": "Stakeholders across 5 departments were constantly requesting one-off reports, consuming 40% of our team's bandwidth.",
+      "task": "Create a self-service analytics solution that would empower business users to answer their own questions.",
+      "action": "Designed and built a Tableau dashboard suite with 12 interactive views. Conducted user research with key stakeholders. Implemented row-level security for data access control. Ran training sessions for 200+ users.",
+      "result": "Ad-hoc reporting requests dropped 35%. User adoption reached 200+ active monthly users. Freed up team bandwidth to focus on strategic ML projects.",
+      "skills": ["Tableau", "Dashboard Design", "Stakeholder Management", "User Research"],
+      "themes": ["scale", "stakeholder-management", "self-service", "efficiency"],
+      "applicableQuestions": [
+        "Tell me about a time you built something that scaled",
+        "How do you handle competing priorities from multiple stakeholders?",
+        "Describe a project where you improved team efficiency"
+      ]
+    }
+  ],
+  "metadata": {
+    "totalStories": 2,
+    "note": "This is an example file. Replace with your own STAR stories."
+  }
+}

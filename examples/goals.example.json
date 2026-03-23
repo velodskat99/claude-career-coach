@@ -1,0 +1,31 @@
+{
+  "lastUpdated": "2026-01-01",
+  "strategyNote": "Example goals file. Replace with your own career goals.",
+  "activeGoals": [
+    {
+      "id": "goal-001",
+      "goal": "Update resume and LinkedIn profile",
+      "why": "Current title undersells actual work. Need to reposition for target roles.",
+      "timeframe": "short",
+      "status": "active",
+      "actions": [
+        { "task": "Rewrite resume with quantified impact bullets", "due": "2026-02-01", "done": false },
+        { "task": "Update LinkedIn headline and About section", "due": "2026-02-15", "done": false }
+      ],
+      "createdAt": "2026-01-01"
+    },
+    {
+      "id": "goal-002",
+      "goal": "Land a Senior role with TC >= $170K",
+      "why": "Ready for next level based on experience and impact.",
+      "timeframe": "medium",
+      "status": "active",
+      "actions": [
+        { "task": "Apply to 10 targeted positions", "due": "2026-03-01", "done": false },
+        { "task": "Practice interviews (5+ sessions)", "due": "2026-03-15", "done": false }
+      ],
+      "createdAt": "2026-01-01"
+    }
+  ],
+  "archivedGoals": []
+}

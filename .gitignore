@@ -1,0 +1,31 @@
+# Personal data (users fill locally)
+profile.yaml
+data/me.md
+data/job-search/tracker.json
+data/job-search/resumes/*.md
+data/job-search/cover-letters/
+data/job-search/search-results-*.md
+data/job-search/weekly-summaries/*.md
+data/interview/stories.json
+data/interview/practice-log.json
+data/interview/sessions/*.md
+data/interview/prep/*.md
+data/analytics/weekly-reports/*.md
+data/sessions/*.md
+data/journal/entries/*.md
+data/journal/milestones.json
+data/career/*.md
+data/career/*.json
+data/skills/inventory.json
+data/strategy/goals.json
+data/network/
+data/finance/
+data/market/
+data/brand/
+data/conversations/
+
+# OS
+.DS_Store
+
+# Env
+.env*

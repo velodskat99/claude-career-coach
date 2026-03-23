@@ -1,0 +1,104 @@
+# Career Coach — User Profile Template
+# Copy this file to profile.yaml and fill in your information.
+# Skills read profile.yaml for your identity; this is the single source of truth.
+
+name: "Your Name"
+location: "City, State/Country"
+linkedin: "https://www.linkedin.com/in/yourprofile/"
+
+# Your current job (helps skills understand where you're coming from)
+current_role:
+  title: "Your Current Title"
+  company: "Your Company"
+  start_date: "YYYY-MM"        # e.g., "2023-06"
+
+# What roles are you targeting? List all that apply.
+target_roles:
+  - "Senior Data Scientist"
+  - "ML Engineer"
+  # - "AI Engineer"
+  # - "Analytics Engineer"
+  # - "Software Engineer"
+  # - "Product Manager"
+
+# Total compensation target
+tc_target:
+  min: 150000                   # minimum acceptable TC
+  max: 250000                   # aspirational TC
+  currency: "USD"               # USD, TWD, EUR, etc.
+
+# Industries you're targeting or have experience in
+industries:
+  - "Technology"
+  # - "Semiconductor"
+  # - "Supply Chain"
+  # - "Finance"
+  # - "Healthcare"
+
+# Your skills (used for fit assessment and interview prep)
+skills:
+  technical:
+    - "Python"
+    - "SQL"
+    # Add your technical skills here
+  domain:
+    - "Your Domain Expertise"
+    # Add your domain skills here
+
+experience_years: 5             # total years of relevant experience
+
+education:
+  - degree: "MS Computer Science"
+    school: "Your University"
+  # - degree: "BS Engineering"
+  #   school: "Another University"
+
+certifications: []
+  # - "AWS Solutions Architect"
+  # - "Google Cloud Professional ML Engineer"
+
+# Interview preparation configuration
+# Define which role types you want to practice and what topics to cover
+interview_prep:
+  default_role: "ds"            # which role to default to when practicing
+  target_roles:
+    - id: "ds"
+      label: "Data Scientist"
+      question_types:
+        - "behavioral"
+        - "technical-ml"
+        - "ml-system-design"
+        - "case-study"
+        - "coding-python-sql"
+      technical_topics:
+        - "ml-fundamentals"
+        - "statistics"
+        - "applied-ml"
+      domain_scenarios: []
+        # - "your-domain-scenario"
+    - id: "swe"
+      label: "Software Engineer"
+      question_types:
+        - "behavioral"
+        - "coding"
+        - "system-design"
+      technical_topics:
+        - "data-structures"
+        - "algorithms"
+        - "distributed-systems"
+      domain_scenarios: []
+    # Add more role types as needed:
+    # - id: "pm"
+    #   label: "Product Manager"
+    #   ...
+
+preferences:
+  language: "en"                # "en", "zh-TW", "ja", etc.
+  remote_preference: "remote"   # "remote", "hybrid", "onsite", "remote_or_hybrid"
+  locations:
+    - "San Francisco, CA"
+    - "Remote US"
+
+# Your unique positioning statement (1-2 sentences)
+# What makes you different from other candidates?
+positioning: "Describe your unique value proposition here"

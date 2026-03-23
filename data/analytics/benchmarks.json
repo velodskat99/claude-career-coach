@@ -1,0 +1,58 @@
+{
+  "source": "Huntr 2025 Annual Job Search Trends Report",
+  "url": "https://huntr.co/research/2025-annual-job-search-trends-report",
+  "lastUpdated": "2026-03-23",
+  "metrics": {
+    "medianTimeToFirstOffer": {
+      "Q1_2025": 57,
+      "Q2_2025": 67,
+      "Q3_2025": 75,
+      "Q4_2025": 83,
+      "unit": "days",
+      "note": "Median time from start of search to first offer. Lengthened throughout 2025."
+    },
+    "applicationVolume": {
+      "typicalWeekly": 16,
+      "top10pctWeekly": 83,
+      "mostCommonPathToOffer": "10-20 targeted applications",
+      "note": "Typical job seeker submits ~16 apps/week. Most offers come from 10-20 targeted applications."
+    },
+    "applicationToInterviewDays": {
+      "median": 5.6,
+      "note": "Days from application to first interview callback."
+    },
+    "interviewToOfferDays": {
+      "median": 12,
+      "note": "Days from interview to offer decision."
+    },
+    "resumeCustomizationImpact": {
+      "tailoredConversionRate": 6.5,
+      "genericConversionRate": 4.3,
+      "improvement": "50%",
+      "note": "Tailored resumes convert 50% higher than generic ones."
+    },
+    "conversionRatesByPlatform": {
+      "googleJobs": 9.3,
+      "glassdoor": 7.3,
+      "governmentJobs": 6.6,
+      "wellfound": 6.4,
+      "indeed": 4.7,
+      "linkedin": 3.3,
+      "unit": "percent",
+      "note": "Interview conversion rate by job platform (% of applications that lead to interviews)."
+    },
+    "referralVsColdApply": {
+      "referralConversionMultiplier": "5-10x",
+      "referralResponseRate": "estimated 40-60%",
+      "coldApplyResponseRate": "estimated 5-15%",
+      "note": "Referrals yield 5-10x higher conversion rates than cold applications. Based on Granovetter (1973) and Wanberg et al. (2020)."
+    },
+    "overallFunnel": {
+      "applicationToResponse": "10-15%",
+      "responseToInterview": "30-50%",
+      "interviewToOffer": "15-25%",
+      "applicationToOffer": "2-5%",
+      "note": "Approximate industry averages. Varies significantly by seniority, role type, and market conditions."
+    }
+  }
+}

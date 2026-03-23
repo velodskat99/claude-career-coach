@@ -1,0 +1,130 @@
+{
+  "lastUpdated": "2026-03-23",
+  "pipeline": {
+    "watching": ["app-003"],
+    "analyzing": [],
+    "preparing": ["app-002"],
+    "applied": ["app-001", "app-004"],
+    "phone_screen": ["app-005"],
+    "onsite": [],
+    "offer": [],
+    "rejected": ["app-006"],
+    "withdrawn": []
+  },
+  "applications": [
+    {
+      "id": "app-001",
+      "company": "Acme Corp",
+      "role": "Senior Data Scientist",
+      "location": "Remote US",
+      "url": "https://acme.com/careers/12345",
+      "source": "LinkedIn",
+      "source_type": "cold_apply",
+      "referrer": null,
+      "matchScore": 78,
+      "tier": 1,
+      "status": "applied",
+      "dateFound": "2026-03-10",
+      "dateApplied": "2026-03-15",
+      "lastActivity": "2026-03-15",
+      "rejection_stage": null,
+      "rejection_reason": null,
+      "tc": { "estimated": "$170K-$220K", "currency": "USD", "notes": "" },
+      "fit": {
+        "strongMatch": ["Python", "ML modeling", "Supply chain domain"],
+        "partialMatch": ["Cloud platforms"],
+        "gaps": ["PhD preferred"]
+      },
+      "resumeVersion": "acme-tailored.md",
+      "contacts": [],
+      "timeline": [
+        { "date": "2026-03-10", "event": "Found on LinkedIn" },
+        { "date": "2026-03-15", "event": "Applied with tailored resume" }
+      ]
+    },
+    {
+      "id": "app-005",
+      "company": "TechFlow",
+      "role": "ML Engineer",
+      "location": "Austin, TX",
+      "url": "https://techflow.io/jobs/ml-eng",
+      "source": "Referral",
+      "source_type": "referral",
+      "referrer": "Jane Smith (former colleague)",
+      "matchScore": 85,
+      "tier": 1,
+      "status": "phone_screen",
+      "dateFound": "2026-03-05",
+      "dateApplied": "2026-03-08",
+      "lastActivity": "2026-03-20",
+      "rejection_stage": null,
+      "rejection_reason": null,
+      "tc": { "estimated": "$180K-$250K", "currency": "USD", "notes": "Including RSU" },
+      "fit": {
+        "strongMatch": ["Python", "XGBoost", "ETL pipelines", "Manufacturing domain"],
+        "partialMatch": ["Kubernetes"],
+        "gaps": []
+      },
+      "resumeVersion": "ml-engineer-tailored.md",
+      "contacts": [{ "name": "Jane Smith", "role": "Referrer", "notes": "Former team at BigCo" }],
+      "timeline": [
+        { "date": "2026-03-05", "event": "Referred by Jane" },
+        { "date": "2026-03-08", "event": "Applied" },
+        { "date": "2026-03-20", "event": "Phone screen scheduled for 3/25" }
+      ]
+    },
+    {
+      "id": "app-006",
+      "company": "DataCo",
+      "role": "Data Scientist",
+      "location": "Remote",
+      "url": "https://dataco.com/jobs/ds",
+      "source": "Indeed",
+      "source_type": "cold_apply",
+      "referrer": null,
+      "matchScore": 65,
+      "tier": 2,
+      "status": "rejected",
+      "dateFound": "2026-03-01",
+      "dateApplied": "2026-03-03",
+      "lastActivity": "2026-03-10",
+      "rejection_stage": "applied",
+      "rejection_reason": "ghosted",
+      "tc": { "estimated": "$140K-$180K", "currency": "USD", "notes": "" },
+      "fit": {
+        "strongMatch": ["Python", "SQL"],
+        "partialMatch": ["Spark"],
+        "gaps": ["NLP experience"]
+      },
+      "resumeVersion": "base.md",
+      "contacts": [],
+      "timeline": [
+        { "date": "2026-03-01", "event": "Found on Indeed" },
+        { "date": "2026-03-03", "event": "Applied with base resume" },
+        { "date": "2026-03-10", "event": "Rejected (no response after 7 days)" }
+      ]
+    }
+  ],
+  "funnel_events": [
+    { "date": "2026-03-05", "app_id": "app-005", "from_stage": null, "to_stage": "watching", "notes": "Referred by Jane" },
+    { "date": "2026-03-08", "app_id": "app-005", "from_stage": "watching", "to_stage": "applied", "notes": "Applied" },
+    { "date": "2026-03-10", "app_id": "app-001", "from_stage": null, "to_stage": "watching", "notes": "Found on LinkedIn" },
+    { "date": "2026-03-15", "app_id": "app-001", "from_stage": "watching", "to_stage": "applied", "notes": "Applied" },
+    { "date": "2026-03-20", "app_id": "app-005", "from_stage": "applied", "to_stage": "phone_screen", "notes": "Phone screen scheduled" },
+    { "date": "2026-03-10", "app_id": "app-006", "from_stage": "applied", "to_stage": "rejected", "notes": "No response" }
+  ],
+  "stats": {
+    "totalApplications": 4,
+    "totalPreparing": 1,
+    "responseRate": "50%",
+    "interviewRate": "25%",
+    "conversionRates": {
+      "applied_to_phone_screen": "50%",
+      "phone_screen_to_onsite": "0%"
+    },
+    "sourceBreakdown": {
+      "cold_apply": { "count": 3, "interview_rate": "33%" },
+      "referral": { "count": 1, "interview_rate": "100%" }
+    }
+  }
+}
