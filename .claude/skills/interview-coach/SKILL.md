@@ -1,6 +1,6 @@
 ---
 name: interview-coach
-description: "Mock interview coach for any technical role. Reads your target roles from profile.yaml to determine question types, technical topics, and domain scenarios. Runs realistic interview practice sessions using your actual STAR stories, skills inventory, and career profile. Use this skill when you want to practice interviews, rehearse answers, prepare for a specific company interview, work on behavioral questions, practice system design, improve your storytelling, or do any kind of interview prep — even casual like 'let's practice' or 'quiz me'. Also triggers for questions about how to answer common interview questions."
+description: "Interview coach for any technical role — mock practice, real interview debrief, and spaced repetition for STAR stories. Use this skill when the user wants to practice interviews, debrief after a real interview, review stale stories, rehearse answers, prepare for a specific company, work on behavioral questions, practice system design, or improve storytelling. Triggers for: 'let's practice', 'quiz me', 'interview prep', 'I just had an interview', 'debrief', 'how did my interview go', 'which stories should I review', 'stale stories', 'prepare for Samsara interview', or any mention of interview practice or post-interview reflection."
 ---
 
 # Interview Coach
@@ -118,6 +118,60 @@ Simulate realistic case studies using the user's domain:
 - For DS: data analysis problems, modeling approach walkthroughs
 - For SWE: system debugging, architecture review scenarios
 - For PM: product case studies, feature prioritization exercises
+
+### 5. Real Interview Debrief
+
+After the user has an actual interview ("just finished my Google onsite"):
+
+1. Ask what happened: who interviewed, what questions were asked, how they answered
+2. For each question, assess: what went well, what could improve
+3. Compare to practice sessions — did the prep help?
+4. Extract new insights for future prep
+5. Save debrief to `data/interview/sessions/{YYYY-MM-DD}-debrief-{company}.md`
+6. Update practice-log with `"type": "real-debrief"` entry
+7. Suggest: "Want to draft a thank-you note?" → hand off to outreach skill
+
+**Debrief is different from practice:**
+- No scoring (it already happened, scoring isn't helpful)
+- Focus on learning: what to do differently next time
+- Capture new stories: real interviews often reveal stories not in the bank
+- Emotional support: acknowledge the stress, celebrate the effort
+
+### 6. Spaced Repetition
+
+At session start, check `stories.json` and `practice-log.json` for stories that need review:
+
+```
+Stories Due for Review:
+  story-001 (Anomaly Detection) — last practiced 21 days ago ⚠️
+  story-004 (ETL Pipeline) — never practiced ❌
+  story-007 (ASML Sensor Data) — practiced 3 days ago ✅
+
+Recommendation: Practice story-004 today (never practiced).
+Then refresh story-001 (getting stale).
+```
+
+**Review schedule:**
+- New stories: practice within 3 days of creation
+- After practice: review in 7 days, then 14 days, then 30 days
+- Stories used in real interviews: refresh within 3 days before next interview
+- Flag stories not practiced in 30+ days as "stale"
+
+### 7. Interview Timeline Integration
+
+Check `data/job-search/tracker.json` for upcoming interviews:
+
+```
+Upcoming Interviews:
+  Samsara — phone screen (scheduled, no date set)
+  Google — preparing (not yet applied)
+
+Prep Recommendations:
+  For Samsara: Practice supply chain ML questions + behavioral
+  For Google: Focus on system design + semiconductor domain questions
+```
+
+When an interview is coming up, proactively suggest what to practice based on the company and role.
 
 ## Coaching Philosophy
 
