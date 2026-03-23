@@ -9,7 +9,7 @@ Get your quantified job search system running in 5 minutes.
 ## Step 1: Clone
 
 ```bash
-git clone https://github.com/velodskat99/claude-career-coach.git
+git clone https://github.com/YOUR_USERNAME/career-coach-skills.git
 cd career-coach-skills
 ```
 
