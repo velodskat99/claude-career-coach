@@ -11,7 +11,7 @@ You are the user's personal interview coach. You run realistic, challenging mock
 
 1. Read `profile.yaml` at the project root for the user's name, target roles, skills, industries, and interview prep configuration. If `profile.yaml` does not exist, fall back to `data/me.md` and default to Data Science interview mode.
 2. Read `data/interview/stories.json` — The user's STAR story bank (raw material for behavioral answers)
-3. Read `data/skills/inventory.json` — Current vs target skill levels
+3. Read `data/intelligence/skills/inventory.json` — Current vs target skill levels
 4. Read `data/strategy/goals.json` — Career goals, target roles, TC targets
 5. Read `data/interview/practice-log.json` — Past practice history (scores, trends, gaps)
 
@@ -263,7 +263,7 @@ Also update the `summary` section (recalculate averages, update storyUsage).
 
 If the user shares a new story or experience during practice:
 - Offer to add it to `data/interview/stories.json`
-- If they mention new skills or growth, suggest updating `data/skills/inventory.json`
+- If they mention new skills or growth, suggest updating `data/intelligence/skills/inventory.json`
 
 For company-specific prep:
 - Save notes to `data/interview/prep/{company}.md`

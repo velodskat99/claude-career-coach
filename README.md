@@ -1,6 +1,6 @@
 # Career Coach Skills for Claude Code
 
-> 7 AI-powered skills that turn your job search into a data-driven, measurable pipeline.
+> 10 public AI-powered skills that turn your job search into a data-driven, measurable pipeline.
 
 Most job seekers spray resumes and pray. This skill suite brings **product analytics thinking** to your career — track your funnel, find bottlenecks, and optimize every stage from application to offer.
 
@@ -98,7 +98,7 @@ You: "I had a win today — my classifier went to production"
 
 Claude: 🎉 Nice! Let me capture this.
         → New STAR story extracted (story-009)
-        → Updated skills/inventory.json: "Production ML" 5→7
+        → Updated data/intelligence/skills/inventory.json: "Production ML" 5→7
         → Milestone logged: First ML model in production
 ```
 
@@ -117,7 +117,7 @@ cd claude-career-coach
 cp profile.template.yaml profile.yaml
 ```
 
-Edit `profile.yaml` with your info — name, target roles, skills, TC target. This is the only config file. All 7 skills read from it.
+Edit `profile.yaml` with your info — name, target roles, skills, TC target. This is the only config file. All skills read from it.
 
 ### 3. Use
 ```bash
@@ -128,7 +128,7 @@ That's it. Start talking naturally — the skills trigger automatically.
 
 ---
 
-## The 7 Skills
+## The 10 Public Skills
 
 | Skill | Triggers When You Say... | What It Does |
 |-------|-------------------------|-------------|
@@ -137,6 +137,9 @@ That's it. Start talking naturally — the skills trigger automatically.
 | **resume-tailor** | "tailor my resume for this role" | Rewrites bullets for ATS keywords, reorders for relevance, creates role-specific version |
 | **tracker** | "I applied to X", "show funnel" | Logs applications, tracks pipeline stages, computes conversion rates, flags stale applications for follow-up |
 | **analytics** | "weekly report", "rejection analysis" | Generates reports with funnel metrics, rejection patterns, resume A/B testing, benchmark comparison |
+| **networking** | "who do I know at X?", "referral" | Tracks contacts, plans referral paths, and prepares informational interviews |
+| **outreach** | "draft a follow-up", "LinkedIn message" | Drafts follow-ups, thank-you notes, recruiter messages, networking emails, and cover letters |
+| **negotiation** | "got an offer", "counter offer" | Evaluates compensation, prepares negotiation strategy, and drafts negotiation scripts |
 | **interview-coach** | "let's practice", "quiz me" | Role-specific mock interviews (DS/SWE/PM/Analytics) with scoring, feedback, and progress tracking |
 | **career-journal** | "I had a win today", "weekly reflection" | Captures career events, extracts STAR stories, tracks skill growth, logs milestones |
 
@@ -181,6 +184,8 @@ profile.yaml                    # Your identity (single source of truth)
 data/
 ├── job-search/
 │   ├── tracker.json            # Pipeline + funnel events (event-sourced)
+│   ├── opportunities.json      # Verified/reviewed job opportunity pool
+│   ├── raw-leads-YYYY-MM-DD.json # Broad market scan leads before verification
 │   ├── resumes/base.md         # Master resume
 │   └── weekly-summaries/       # Auto-generated pipeline snapshots
 ├── interview/

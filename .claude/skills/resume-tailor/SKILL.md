@@ -14,7 +14,7 @@ Read these files:
 2. `data/job-search/resumes/base.md` — The master resume (source of truth)
 3. `data/me.md` — Full profile with context behind each achievement
 3. `data/interview/stories.json` — STAR stories (richer detail than resume bullets)
-4. `data/skills/inventory.json` — Current skill levels
+4. `data/intelligence/skills/inventory.json` — Current skill levels
 5. `data/job-search/tracker.json` — Which companies/roles the user is targeting
 
 Also check for existing tailored versions:

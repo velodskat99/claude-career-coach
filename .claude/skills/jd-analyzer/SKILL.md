@@ -12,7 +12,7 @@ You analyze job descriptions against the user's profile to give thema clear pict
 Read these files to understand the user's profile:
 1. `profile.yaml` at the project root — User identity, target roles, skills, industries. If not found, fall back to `data/me.md`.
 2. `data/me.md` — Full profile
-2. `data/skills/inventory.json` — Skill levels (current vs target)
+2. `data/intelligence/skills/inventory.json` — Skill levels (current vs target)
 3. `data/interview/stories.json` — STAR story bank
 4. `data/job-search/resumes/base.md` — Current base resume
 5. `data/strategy/goals.json` — Career goals and target TC

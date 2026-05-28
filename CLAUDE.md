@@ -14,13 +14,49 @@ AI 職涯教練系統。**主要在 Claude Code CLI 進行教練對話**，`data
 - 更新被討論到的相關檔案
 - 標記已完成的 action items
 
+## Career OS v2 Operating Rules
+
+此 repo 的目的是確保使用者的職涯成長與求職成功，不只是保存筆記。所有 agent/skill 必須遵守以下資料流與決策規則。
+
+### Single Source of Truth
+- `profile.yaml` 是身份、目標、偏好、限制的唯一真相。
+- `profile.yaml.role_strategy.excluded_tracks` 是硬限制。若 profile 排除 SWE-track roles，包含 Software Engineer、AI infrastructure SWE、embedded/C++ systems、frontend/backend product SWE，必須照做。
+- 若使用者在對話中新增偏好或硬限制，必須更新 `profile.yaml`，不能只留在 chat/session summary。
+
+### Job Search Data Flow
+```
+raw search results
+  → data/job-search/raw-leads-{YYYY-MM-DD}.json
+  → screen for fit / no-SWE / location / role shape
+  → verify live listing + actual location + role shape
+  → data/job-search/opportunities.json
+  → only after the user chooses to pursue
+  → data/job-search/tracker.json
+```
+
+- `data/job-search/raw-leads-*.json`：廣泛市場掃描池。可包含未驗證 LinkedIn / 104 / company career leads，但必須標記來源與狀態，不能當成推薦。
+- `data/job-search/search-results-*.md`：研究過程與搜尋報告，必須列出 raw leads、screened candidates、verified opportunities、removed/excluded 的 counts。
+- `data/job-search/opportunities.json`：verified/reviewed candidate pool。所有推薦職缺應先進這裡，並有 `verification.status`, `locationVerified`, `fit.score`, `decision.recommendation`。
+- `data/job-search/tracker.json`：只放使用者已決定追蹤、準備、投遞、面試或 follow-up 的職缺。
+- 不得把未驗證、地點不明、或只是 search snippet 的職缺放進 tracker。
+- 嚴格 verified 定義：必須是 exact job page 或 rendered browser page 明確顯示 title、location、以及 apply/live signal。官方 search page、搜尋引擎 snippet、LinkedIn public snippet、JS 空頁、Workday 空頁只能標為 `search_page_only` 或 `needs_browser_verification`，不能當成已驗證推薦。
+- 若 exact job page 或使用者截圖顯示 `No longer accepting applications`、`不再受理應徵`、expired、closed、not found，必須從 `opportunities.json` 移到 `removed`，即使搜尋結果仍顯示 `Apply`。
+- LinkedIn 驗證優先使用 logged-in/rendered `linkedin.com/jobs/view/...` 畫面；`tw.linkedin.com/jobs/view/...` 的公開 crawler snippet 只能當候選線索，不足以判定職缺仍可投。
+
+### Role Fit Rules
+- 優先推薦：Applied AI Engineer、Senior Data Scientist、ML Application Engineer、Manufacturing Intelligence / Operations AI、AI Solutions Engineer。
+- 可接受但需標記 tradeoff：Analytics Engineer、Decision Scientist、Technical AI Solutions / Cloud AI Advocate、NPI/Manufacturing Analytics with ML ownership。
+- 預設排除：SWE-track、AI infrastructure SWE、embedded/C++ systems、pure PM、pure hardware、retail/ops-only。
+- 台灣職缺必須確認實際工作地點，不可因 URL 是 `zh-tw` 或台灣版頁面就推定在台灣。
+- 偏好外商，但台灣本土公司若與 semiconductor + applied AI fit 非常強，可作為 strategic exception。
+
 ## 職涯發展十大面向
 
 ```
 Career Coach
 ├── 1. 自我認知 Identity       → data/me.md, career/
 ├── 2. 市場洞察 Market         → data/market/
-├── 3. 技能發展 Skills         → data/skills/
+├── 3. 技能發展 + 情報 Intelligence → data/intelligence/
 ├── 4. 職涯策略 Strategy       → data/strategy/
 ├── 5. 求職管理 Job Search     → data/job-search/
 ├── 6. 面試與談判 Interview    → data/interview/
@@ -45,10 +81,14 @@ Career Coach
 - `market/target-roles.json` — 目標角色分析（JD 拆解）
 - `market/companies.json` — 目標公司研究
 
-### 3. 技能發展 Skills (`data/skills/`)
-- `skills/inventory.json` — 技能盤點（current level vs target level）
-- `skills/learning-paths.json` — 學習路徑
-- `skills/resources.json` — 學習資源收藏
+### 3. 技能發展 + 情報 Intelligence (`data/intelligence/`)
+- `intelligence/index.json` — 中央元數據（pending updates, staleness）
+- `intelligence/feed/weekly/` — 自動週報（每週日產出）
+- `intelligence/feed/insights/` — 手動/session 紀錄的洞察
+- `intelligence/feed/sources.json` — 追蹤的情報來源
+- `intelligence/skills/inventory.json` — 技能盤點（canonical skill inventory）
+- `intelligence/curriculum/paths/` — 學習路徑（獨立檔案）
+- `intelligence/curriculum/progress.json` — 學習進度追蹤
 
 ### 4. 職涯策略 Strategy (`data/strategy/`)
 - `strategy/goals.json` — OKR 目標（短中長期 + 行動項目）

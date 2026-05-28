@@ -35,7 +35,7 @@ mkdir -p data/job-search/resumes data/job-search/weekly-summaries
 mkdir -p data/interview/sessions data/interview/prep
 mkdir -p data/analytics/weekly-reports
 mkdir -p data/sessions data/journal/entries
-mkdir -p data/skills data/strategy data/career
+mkdir -p data/intelligence/skills data/strategy data/career
 ```
 
 Create your base resume:
@@ -89,12 +89,15 @@ After clicking "Apply" on any career page:
 ├── profile.yaml              # Your identity (fill this in!)
 ├── profile.template.yaml     # Blank template
 ├── CLAUDE.md                 # Instructions for Claude
-├── .claude/skills/           # The 7 skills
+├── .claude/skills/           # The 10 public skills
 │   ├── job-search/           # Find + verify job listings
 │   ├── jd-analyzer/          # Analyze job descriptions vs your profile
 │   ├── resume-tailor/        # Tailor resume per job
 │   ├── tracker/              # Pipeline tracking + funnel analytics
 │   ├── analytics/            # Reports + insights + benchmarks
+│   ├── networking/           # Contacts + referrals
+│   ├── outreach/             # Follow-ups + professional messages
+│   ├── negotiation/          # Offer evaluation + negotiation scripts
 │   ├── interview-coach/      # Mock interviews (any role type)
 │   └── career-journal/       # Career reflection + growth logging
 ├── data/                     # Your personal data (gitignored)

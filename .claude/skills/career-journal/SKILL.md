@@ -69,7 +69,7 @@ Save to `data/journal/entries/{YYYY-MM-DD}.md`.
 
 ## Story Extraction
 
-This is one of the most valuable things this journal does. Many people walk into interviews with 3-4 stories when they should have 15-20. the user's daily work at Applied Materials is generating new story material constantly — the journal captures it before it fades.
+This is one of the most valuable things this journal does. Many people walk into interviews with 3-4 stories when they should have 15-20. The user's daily work, especially in their current role from `profile.yaml`, is generating new story material constantly — the journal captures it before it fades.
 
 When you spot potential STAR material:
 1. Draft the STAR structure (Situation, Task, Action, Result)
@@ -86,7 +86,7 @@ Things that make good stories:
 ## Skill Tracking
 
 If the user mentions using a skill in a new way or reaching a new level of competency:
-- Suggest updating `data/skills/inventory.json` with a new `current` level
+- Suggest updating `data/intelligence/skills/inventory.json` with a new `current` level
 - Note the evidence: "Moved Python from 8 to 8.5 based on building a complex async ETL pipeline this week"
 
 ## Milestone Detection
